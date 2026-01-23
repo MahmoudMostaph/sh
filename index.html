@@ -8,95 +8,106 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --bg:#0f172a;
-    --card:#1e293b;
-    --text:#e5e7eb;
-    --accent:#22c55e;
+:root{
+--bg:#0f172a;
+--card:#1e293b;
+--text:#e5e7eb;
+--accent:#22c55e;
 }
 
 body{
-    margin:0;
-    font-family:'Cairo',sans-serif;
-    background:var(--bg);
-    color:var(--text);
+margin:0;
+font-family:'Cairo',sans-serif;
+background:var(--bg);
+color:var(--text);
 }
 
 header{
-    text-align:center;
-    padding:40px 15px;
-    background:linear-gradient(to bottom,#14532d,#022c22);
+text-align:center;
+padding:40px 15px;
+background:linear-gradient(to bottom,#14532d,#022c22);
 }
 
 header h1{
-    margin:0;
-    font-size:28px;
+margin:0;
+font-size:28px;
 }
 
 header p{
-    margin-top:10px;
-    color:#bbf7d0;
+margin-top:10px;
+color:#bbf7d0;
 }
 
 section{
-    background:var(--card);
-    margin:25px auto;
-    padding:25px;
-    max-width:900px;
-    border-radius:16px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+background:var(--card);
+margin:25px auto;
+padding:25px;
+max-width:900px;
+border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
 h2{
-    color:var(--accent);
-    border-right:4px solid var(--accent);
-    padding-right:10px;
+color:var(--accent);
+border-right:4px solid var(--accent);
+padding-right:10px;
 }
 
 .ayah{
-    font-family:'Amiri',serif;
-    font-size:22px;
-    line-height:2.1;
-    text-align:center;
+font-family:'Amiri',serif;
+font-size:22px;
+line-height:2.1;
+text-align:center;
 }
 
-.dua,.hadith{
-    font-size:18px;
-    line-height:1.9;
-    margin-bottom:18px;
+.dua{
+font-size:18px;
+line-height:1.9;
+margin-bottom:18px;
+}
+
+img{
+width:100%;
+border-radius:12px;
+margin-top:15px;
 }
 
 audio{
-    width:100%;
-    margin-top:15px;
+width:100%;
+margin-top:15px;
 }
 
 .tasbeeh{
-    text-align:center;
+text-align:center;
 }
 
 .counter{
-    font-size:52px;
-    color:var(--accent);
-    margin:20px 0;
+font-size:52px;
+color:var(--accent);
+margin:15px 0;
+}
+
+.zikr{
+font-size:22px;
+margin-bottom:10px;
 }
 
 button{
-    background:var(--accent);
-    color:#022c22;
-    border:none;
-    padding:14px 30px;
-    font-size:18px;
-    border-radius:12px;
-    cursor:pointer;
-    margin:5px;
+background:var(--accent);
+color:#022c22;
+border:none;
+padding:14px 30px;
+font-size:18px;
+border-radius:12px;
+cursor:pointer;
+margin:5px;
 }
 
 footer{
-    text-align:center;
-    padding:20px;
-    color:#94a3b8;
-    font-size:14px;
+text-align:center;
+padding:20px;
+color:#94a3b8;
+font-size:14px;
 }
 </style>
 </head>
@@ -105,100 +116,53 @@ footer{
 
 <header>
 <h1>صدقة جارية على روح الحاج شعبان بحيري</h1>
-<p>اللهم اجعل القرآن شفيعًا له ونورًا في قبره</p>
+<p>اللهم اجعل هذا العمل نورًا له في قبره</p>
 </header>
 
-<!-- قرآن للقراءة -->
+<!-- سورة سورة يس -->
 <section>
-<h2>📖 صفحة قرآنية للقراءة</h2>
-
-<div class="ayah">
-بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ  
-<br><br>
-﴿ يٰسٓ ۝ وَالْقُرْآنِ الْحَكِيمِ ۝ إِنَّكَ لَمِنَ الْمُرْسَلِينَ ۝
-عَلَىٰ صِرَاطٍ مُّسْتَقِيمٍ ۝ تَنزِيلَ الْعَزِيزِ الرَّحِيمِ ﴾
-<br><br>
-﴿ سَلَامٌ قَوْلًا مِّن رَّبٍّ رَّحِيمٍ ﴾
-</div>
+<h2>🖼 سورة يس كاملة</h2>
+<img src="https://i.imgur.com/2NQXz8B.jpg" alt="سورة يس كاملة">
 </section>
 
 <!-- صوت القرآن -->
 <section>
-<h2>🔊 تلاوة القرآن الكريم</h2>
-<div class="ayah">سورة يس – تلاوة مرتلة</div>
-
+<h2>🔊 تلاوة سورة يس</h2>
+<div class="ayah">تلاوة مرتلة خاشعة</div>
 <audio controls>
 <source src="https://download.quranicaudio.com/quran/abdul_basit_murattal/036.mp3" type="audio/mpeg">
 متصفحك لا يدعم تشغيل الصوت
 </audio>
 </section>
 
-<!-- أدعية نبوية صحيحة -->
+<!-- أدعية للمرحوم -->
 <section>
-<h2>🤲 أدعية نبوية صحيحة</h2>
+<h2>🤲 أدعية للمرحوم</h2>
 
 <div class="dua">
-قال رسول الله ﷺ:<br>
-<strong>
-«اللَّهُمَّ اغْفِرْ لَهُ، وَارْحَمْهُ، وَعَافِهِ، وَاعْفُ عَنْهُ،
-وَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ،
-وَاغْسِلْهُ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ»
-</strong><br>
-<small>رواه مسلم</small>
+اللهم اغفر له وارحمه، وعافه واعفُ عنه، وأكرم نزله، ووسع مدخله، واغسله بالماء والثلج والبرد.
 </div>
 
 <div class="dua">
-قال رسول الله ﷺ:<br>
-<strong>
-«اللَّهُمَّ أَبْدِلْهُ دَارًا خَيْرًا مِنْ دَارِهِ،
-وَأَهْلًا خَيْرًا مِنْ أَهْلِهِ،
-وَزَوْجًا خَيْرًا مِنْ زَوْجِهِ،
-وَأَدْخِلْهُ الْجَنَّةَ»
-</strong><br>
-<small>رواه مسلم</small>
+اللهم اجعل قبره روضة من رياض الجنة، ولا تجعله حفرة من حفر النار.
 </div>
 
 <div class="dua">
-قال رسول الله ﷺ:<br>
-<strong>
-«اللَّهُمَّ اجْعَلْ قَبْرَهُ رَوْضَةً مِنْ رِيَاضِ الْجَنَّةِ،
-وَلَا تَجْعَلْهُ حُفْرَةً مِنْ حُفَرِ النَّارِ»
-</strong><br>
-<small>حديث حسن</small>
+اللهم آنسه في وحدته، وارحمه في غربته، واجعل له من كل ضيق مخرجًا ومن كل هم فرجًا.
 </div>
 
-</section>
-
-<!-- أحاديث صحيحة فقط -->
-<section>
-<h2>📜 أحاديث نبوية صحيحة</h2>
-
-<div class="hadith">
-قال رسول الله ﷺ:<br>
-<strong>
-«إِذَا مَاتَ الإِنْسَانُ انْقَطَعَ عَنْهُ عَمَلُهُ
-إِلَّا مِنْ ثَلَاثٍ: صَدَقَةٍ جَارِيَةٍ،
-أَوْ عِلْمٍ يُنْتَفَعُ بِهِ،
-أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ»
-</strong><br>
-<small>رواه مسلم</small>
-</div>
-
-<div class="hadith">
-قال رسول الله ﷺ:<br>
-<strong>
-«اقْرَؤُوا الْقُرْآنَ، فَإِنَّهُ يَأْتِي يَوْمَ الْقِيَامَةِ شَفِيعًا لِأَصْحَابِهِ»
-</strong><br>
-<small>رواه مسلم</small>
+<div class="dua">
+اللهم اجزه عن الإحسان إحسانًا، وعن الإساءة عفوًا وغفرانًا.
 </div>
 </section>
 
-<!-- مسبحة -->
+<!-- المسبحة الذكية -->
 <section>
 <h2>📿 المسبحة الإلكترونية</h2>
 <div class="tasbeeh">
+<div class="zikr" id="zikr">سبحان الله</div>
 <div class="counter" id="count">0</div>
-<button onclick="inc()">سبحان الله</button>
+<button onclick="tasbeeh()">تسبيح</button>
 <button onclick="reset()">إعادة</button>
 </div>
 </section>
@@ -208,18 +172,26 @@ footer{
 </footer>
 
 <script>
-let c = localStorage.getItem("tasbeeh") ? parseInt(localStorage.getItem("tasbeeh")) : 0;
-document.getElementById("count").innerText = c;
+let count = 0;
+let zikr = "سبحان الله";
 
-function inc(){
-    c++;
-    localStorage.setItem("tasbeeh",c);
-    document.getElementById("count").innerText = c;
+function tasbeeh(){
+count++;
+
+if(zikr === "سبحان الله" && count === 30){
+zikr = "أستغفر الله";
+count = 0;
 }
+
+document.getElementById("count").innerText = count;
+document.getElementById("zikr").innerText = zikr;
+}
+
 function reset(){
-    c=0;
-    localStorage.setItem("tasbeeh",c);
-    document.getElementById("count").innerText = c;
+count = 0;
+zikr = "سبحان الله";
+document.getElementById("count").innerText = count;
+document.getElementById("zikr").innerText = zikr;
 }
 </script>
 

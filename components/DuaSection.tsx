@@ -27,7 +27,7 @@ const DuaSection: React.FC = () => {
   return (
     <section id="duas" className="mb-16">
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
-        <h2 className="text-3xl font-bold text-emerald-900 font-serif-arabic">أدعية للفقيد</h2>
+        <h2 className="text-3xl font-bold text-emerald-900 font-serif-arabic">أدعية للمرحوم</h2>
         <button 
           onClick={fetchNewDua}
           disabled={isLoading}
@@ -45,7 +45,7 @@ const DuaSection: React.FC = () => {
              <p className="text-xl md:text-2xl text-emerald-900 font-serif-arabic leading-loose">
                {dynamicDua}
              </p>
-             <div className="mt-4 text-emerald-600 font-medium text-sm">— دعاء خاص لـ شعبان بحيري</div>
+             <div className="mt-4 text-emerald-600 font-medium text-sm">— دعاء خاص لـ المرحوم شعبان بحيري</div>
           </div>
         )}
 

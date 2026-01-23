@@ -7,8 +7,9 @@ const DigitalMisbaha: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [clickEffect, setClickEffect] = useState(false);
 
-  const goal = 30;
+  const goal = 33; // تحديث الرقم ليكون متوافقاً مع السنة (33)
 
   const resetCount = useCallback(() => {
     setCount(0);
@@ -28,6 +29,9 @@ const DigitalMisbaha: React.FC = () => {
   const handleIncrement = () => {
     if (isTransitioning) return;
 
+    setClickEffect(true);
+    setTimeout(() => setClickEffect(false), 150);
+
     const nextCount = count + 1;
     if (nextCount >= goal) {
       setCount(goal);
@@ -37,14 +41,13 @@ const DigitalMisbaha: React.FC = () => {
         navigator.vibrate([100, 50, 100]);
       }
 
-      // الانتقال التلقائي بعد ثانية واحدة
       setTimeout(() => {
         nextPhrase();
-      }, 1000);
+      }, 1200);
     } else {
       setCount(nextCount);
       if ('vibrate' in navigator) {
-        navigator.vibrate(20);
+        navigator.vibrate(25);
       }
     }
   };
@@ -53,35 +56,35 @@ const DigitalMisbaha: React.FC = () => {
   const circumference = 2 * Math.PI * 90;
 
   return (
-    <section id="misbaha" className="py-12 px-4">
+    <section id="misbaha" className="py-8 px-4">
       <div className="max-w-md mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-emerald-900 font-serif-arabic">المسبحة الإلكترونية</h2>
-          <p className="text-emerald-700 text-sm mt-2">تنتقل تلقائياً بعد كل {goal} تسبيحة</p>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-emerald-900 font-serif-arabic mb-2">المسبحة الإلكترونية</h2>
+          <div className="h-1 w-16 bg-emerald-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-emerald-50 transition-all">
+        <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-emerald-50 transition-all transform hover:shadow-emerald-900/5">
           <div className="bg-emerald-800 p-8 text-white text-center relative">
-            <div className="flex justify-between items-center mb-4">
-              <button onClick={prevPhrase} className="p-2 hover:bg-white/10 rounded-full transition-colors"><ChevronRight size={20} /></button>
-              <span className="text-[10px] uppercase tracking-widest opacity-60 font-bold">الذِكر الحالي</span>
-              <button onClick={nextPhrase} className="p-2 hover:bg-white/10 rounded-full transition-colors"><ChevronLeft size={20} /></button>
+            <div className="flex justify-between items-center mb-6">
+              <button onClick={prevPhrase} className="p-3 hover:bg-white/10 rounded-full transition-colors active:scale-90"><ChevronRight size={22} /></button>
+              <span className="text-xs uppercase tracking-[0.2em] opacity-70 font-bold">الذِكر الحالي</span>
+              <button onClick={nextPhrase} className="p-3 hover:bg-white/10 rounded-full transition-colors active:scale-90"><ChevronLeft size={22} /></button>
             </div>
-            <h3 className="text-2xl font-bold font-serif-arabic min-h-[4.5rem] flex items-center justify-center">
+            <h3 className="text-2xl md:text-3xl font-bold font-serif-arabic min-h-[5rem] flex items-center justify-center leading-relaxed">
               {TASBEEH_PHRASES[currentIndex].text}
             </h3>
           </div>
 
-          <div className="p-10 flex flex-col items-center justify-center bg-gradient-to-b from-white to-emerald-50/20">
-            <div className="relative w-64 h-64">
+          <div className="p-12 flex flex-col items-center justify-center bg-gradient-to-b from-white to-emerald-50/30">
+            <div className={`relative w-72 h-72 transition-transform duration-150 ${clickEffect ? 'scale-95' : 'scale-100'}`}>
               <svg className="w-full h-full -rotate-90">
-                <circle cx="128" cy="128" r="90" fill="transparent" stroke="#f1f5f9" strokeWidth="12" />
+                <circle cx="144" cy="144" r="110" fill="transparent" stroke="#f1f5f9" strokeWidth="16" />
                 <circle 
-                  cx="128" cy="128" r="90" fill="transparent" 
+                  cx="144" cy="144" r="110" fill="transparent" 
                   stroke={isTransitioning ? "#10b981" : "#059669"} 
-                  strokeWidth="12" 
-                  strokeDasharray={circumference}
-                  strokeDashoffset={circumference - (progress / 100) * circumference}
+                  strokeWidth="16" 
+                  strokeDasharray={2 * Math.PI * 110}
+                  strokeDashoffset={2 * Math.PI * 110 - (progress / 100) * (2 * Math.PI * 110)}
                   strokeLinecap="round"
                   className="transition-all duration-300"
                 />
@@ -90,28 +93,32 @@ const DigitalMisbaha: React.FC = () => {
               <button 
                 onClick={handleIncrement}
                 disabled={isTransitioning}
-                className={`absolute inset-0 m-6 rounded-full flex flex-col items-center justify-center transition-all active:scale-95 shadow-inner border-2 ${
-                  isTransitioning ? 'bg-emerald-50 border-emerald-200' : 'bg-white border-slate-50 hover:bg-slate-50'
+                className={`absolute inset-0 m-8 rounded-full flex flex-col items-center justify-center transition-all shadow-inner border-4 ${
+                  isTransitioning 
+                    ? 'bg-emerald-50 border-emerald-200' 
+                    : 'bg-white border-slate-50 hover:bg-slate-50 active:shadow-emerald-900/10'
                 }`}
               >
                 {isTransitioning ? (
-                  <CheckCircle2 size={60} className="text-emerald-500 animate-bounce" />
+                  <CheckCircle2 size={80} className="text-emerald-500 animate-bounce" />
                 ) : (
                   <>
-                    <span className="text-7xl font-bold text-emerald-950">{count}</span>
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">سبّح</span>
+                    <span className="text-8xl font-black text-emerald-950 tabular-nums">{count}</span>
+                    <span className="text-sm text-slate-400 font-bold uppercase tracking-widest mt-2">اضغط للتسبيح</span>
                   </>
                 )}
               </button>
             </div>
 
-            <button 
-              onClick={resetCount}
-              className="mt-8 flex items-center gap-2 px-6 py-2 bg-slate-100 text-slate-500 rounded-full hover:bg-slate-200 transition-all text-xs font-bold"
-            >
-              <RotateCcw size={14} />
-              تصفير العداد
-            </button>
+            <div className="mt-10 flex gap-4">
+              <button 
+                onClick={resetCount}
+                className="flex items-center gap-2 px-8 py-3 bg-slate-100 text-slate-600 rounded-full hover:bg-slate-200 transition-all text-sm font-bold active:scale-95"
+              >
+                <RotateCcw size={16} />
+                تصفير العداد
+              </button>
+            </div>
           </div>
         </div>
       </div>

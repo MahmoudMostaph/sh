@@ -22,7 +22,7 @@ const AmeenWall: React.FC = () => {
         </div>
         <h3 className="text-2xl font-bold text-slate-800 mb-4">قُل آمين</h3>
         <p className="text-slate-600 mb-8 leading-relaxed">
-          انضم إلينا في الدعاء للفقيد شعبان بحيري. ضغطتك هي "آمين" صادقة من القلب.
+          انضم إلينا في الدعاء للمرحوم شعبان بحيري. ضغطتك هي "آمين" صادقة من القلب.
         </p>
         
         <button 

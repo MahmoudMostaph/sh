@@ -26,7 +26,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <footer className="bg-emerald-950 text-emerald-500/60 py-10 px-4 text-center border-t border-emerald-900/50">
         <p className="mb-2 text-emerald-100/70 font-medium font-serif-arabic text-lg">اللهم تقبل هذا العمل خالصاً لوجهك الكريم</p>
-        <p className="text-xs font-light tracking-widest">© {new Date().getFullYear()} - لروح الفقيد شعبان بحيري</p>
+        <p className="text-xs font-light tracking-widest">© {new Date().getFullYear()} - لروح المرحوم شعبان بحيري</p>
       </footer>
     </div>
   );
